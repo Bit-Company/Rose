@@ -54,21 +54,18 @@ abstract class adoabstract {
         $this->mensagem = $mensagem;
     }
     public function BuscaCabecalho() {
-        echo "Passei";
-        $instrucao = "select caminho_logomarca,nome from Usuario where cnpj = 666666";
-        $executou = parent::executaInstrucao($instrucao);
-        echo "Foi1";
+        $instrucao = "SELECT caminho_logomarca,nome FROM Usuario WHERE cnpj = 123";
+        $executou = $this->executaInstrucao($instrucao);
         if ($executou) {
-            echo "Foi 2";
             if ($this->pdoStatement->rowCount() === 0) {
                 return 0;
+                
             }
         } else {
             return false;
         }
-
+ 
         $obj = $this->pdoStatement->fetch(PDO::FETCH_OBJ);
-        echo $obj->nome;
         return $obj;
     }
 }

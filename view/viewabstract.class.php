@@ -40,7 +40,7 @@ abstract class ViewAbstract{
     
     public function montaMenu() {
         $html = "";
-        $html  .= "<div class='vertical_menu'><ul>"
+        $html  .= "<div class='cinza column'><div class='vertical_menu '><ul>"
                 . "<a href='./mantemcompra.php'> <li>Compras</li></a>"
                 . "<a href='./mantemfuncionarios.php'> <li>Funcionarios</li></a>"
                 . "<a href='./mantemestoque.php'> <li>Estoque</li></a>"
@@ -51,7 +51,7 @@ abstract class ViewAbstract{
                 . "<a href='./mantemclientes.php'> <li>Clientes</li></a>"
                 . "<a href='./mantemfornecedores.php'> <li>Fornecedores</li></a>"
                 . "<a href='./mantemajuda.php'> <li>Ajuda</li></a>"
-                . "</ul></div>";
+                . "</ul></div></div>";
         return $html;
     }
     
@@ -62,13 +62,13 @@ abstract class ViewAbstract{
     public function montaCabecalho(){
         
         $html = "";
-        $html  .= "<div id = 'cabecalho'>"
-                . "<hr></hr>"
-                . "<img src='{$this->caminho_logo}'>"
-                . "<h1>{$this->nome_empresa}</h1>"
-                . "<form action='' method = 'POST'>"
+        $html  .= "<div id= 'cabecalho'>"
+                . "<div id = 'circle'><img src='{$this->caminho_logo}'></div>"
+                . "<div id = 'nome'><h1>{$this->nome_empresa}</h1></div>"
+                . "<div id = 'sair'><form action='' method = 'POST'>"
                         . "<button type= 'submit' name ='bt' value='sair'>Sair</button>"
-                . "</form>"
+                . "</form></div>"
+                . "<div id = 'divisoria'><hr></hr></div>"
                 . "</div>";
         return $html;       
     }

@@ -9,9 +9,10 @@ class IndexController{
 
 
     public function __construct() {
-        //$this->buscaNomeImg();
-        $this->indexView = new IndexView("BitCompany", $this->caminho_logo, $this->nome);
+        
         $this->indexAdo = new IndexAdo();
+        $this->buscaNomeImg();
+        $this->indexView = new IndexView("BitCompany", $this->caminho_logo, $this->nome);
         
         $this->indexView->montaCorpo();
         $this->indexView->displayInterface();
@@ -20,7 +21,7 @@ class IndexController{
     public function buscaNomeImg(){
         $busca = $this->indexAdo->BuscaCabecalho();
         if($busca){
-            $this->caminho_logo = $busca->camiho_logomarca;
+            $this->caminho_logo = $busca->caminho_logomarca;
             $this->nome = $busca->nome;
         }else{
             $this->indexView->adicionaNasMensagens("Não foi possivel buscar determinados dados do usuario");

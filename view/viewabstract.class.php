@@ -4,7 +4,7 @@ abstract class ViewAbstract{
     
     protected $html1 = null;
     protected $html2 = null;
-    protected $corpo = "";
+    protected $corpo = "<div class='corpo'>";
     protected $mensagens = null;
     protected $titulo = null;
     protected $caminho_logo = null;
@@ -31,7 +31,7 @@ abstract class ViewAbstract{
     }
     
     public function montaHtml2(){
-        $this->html2 = "{$this->montaRodape()}</body></html>\n";
+        $this->html2 = "</div>{$this->montaRodape()}</body></html>\n";
     }
     
     public function adicionaNoCorpo($item){
@@ -62,12 +62,12 @@ abstract class ViewAbstract{
     public function montaCabecalho(){
         
         $html = "";
-        $html  .= "<div id= 'cabecalho'>"
-                . "<div id = 'circle'><img src='{$this->caminho_logo}'></div>"
-                . "<div id = 'nome'><h1>{$this->nome_empresa}</h1></div>"
-                . "<div id = 'sair'><form action='' method = 'POST'>"
+        $html  .= "<div id= 'cabecalho' class='clearfix'>"
+                . "<div class='box' style='background-color:#bbb'><div id = 'circle'><img src='{$this->caminho_logo}'></div></div>"
+                . "<div class='box' style='background-color:#ccc'><div id = 'nome'><h1>{$this->nome_empresa}</h1></div></div>"
+                . "<div class='box' style='background-color:#ddd'><div id = 'sair'><form action='' method = 'POST'>"
                         . "<button type= 'submit' name ='bt' value='sair'>Sair</button>"
-                . "</form></div>"
+                . "</form></div></div>"
                 . "<div id = 'divisoria'><hr></hr></div>"
                 . "</div>";
         return $html;       

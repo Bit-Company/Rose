@@ -70,8 +70,8 @@ body{
     height: 100%;
 }
 
-#cabecalho{
-    background-color: #3A96AA;
+.cabecalho{
+    background-color: #12110f;
     width: 100%;
     height: 9.765%;
 }
@@ -83,17 +83,15 @@ ul {
 }
 
 #rodape{
-    background-color: #3A96AA;
+    background-color: #12110f;
     width: 100%;
     height: 9.765%;
     float: right;
-    margin-top: 12;
 }
 
 #sair{
     width: 10%;
     margin-left: 93%;
-    margin-top: -2%;
 }
 
 #nome h1{
@@ -103,8 +101,8 @@ ul {
     color: activeborder;
 }
 
-#content{
-    align-items: center;    
+.corpo{    
+    width: 25%; 
 }
 
 #rodape h4{
@@ -115,5 +113,22 @@ ul {
 #divisoria{
     margin-top: 7.5%;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 
 

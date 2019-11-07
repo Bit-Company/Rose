@@ -3,11 +3,11 @@ require_once 'viewabstract.class.php';
 
 class IndexView extends ViewAbstract {
     public function montaCorpo(){
-        $html = "<div classe = 'content column'>"
+        $html = "<center><div classe = 'content column'>"
                 . "<h4>"
-                . "Bem Vindo ao BitCompany"
+                . "Bem Vindo ao sistema criado e mantido por BitCompany!"
                 . "</h4>"
-                . "</div>";
+                . "</div><hr></center>";
     
         $this->adicionaNoCorpo($html);
     }
